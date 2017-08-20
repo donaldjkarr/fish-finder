@@ -26,8 +26,8 @@
         <div class="jumbotron" id="jumbotron">
             <div class="row">
                 <div class="col-md-4">
-                  <a href="fish.html"><button class="btn btn-success btn-lg">Fish</button></a>
-                  <a href="map.html"><button class="btn btn-info btn-lg">Map</button></a>
+                  <a href="fish.html"><button class="btn btn-info btn-lg">Fish</button></a>
+                  <a href="map.html"><button class="btn btn-success btn-lg">Map</button></a>
                 </div>
                 <div class="col-lg-8">
                     <div id="title">
@@ -37,29 +37,30 @@
             </div>
             <!--INPUT-->
             <div class="row">
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon3"><h3>Fish Type</h3>
-                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                    </span>
-                </div>
-                 <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon3"><h3>Lure</h3>
-                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                    </span>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon3"><h3>Depth</h3>
-                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                    </span>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon3"><h3>Location</h3>
-                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                    </span>
-                </div>
-                  <br>
-                    <a><button class="btn btn-lg btn-warning">Submit</button></a>
-                </div>
+                <form name="form" action="localhost" method="post">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="fish-type"><h3>Fish Type</h3>
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                        </span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="lure"><h3>Lure</h3>
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                        </span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="depth"><h3>Depth</h3>
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                        </span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="comments"><h3>Comments</h3>
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                        </span>
+                    </div>
+                    <br>
+                        <a><button class="btn btn-lg btn-warning" >Submit</button></a>
+                </form>
             </div>
         </div>
 
