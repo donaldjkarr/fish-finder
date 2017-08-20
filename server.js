@@ -1,4 +1,5 @@
 // Dependencies
+var port = process.env.PORT || 3300;
 var express = require("express");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
@@ -13,6 +14,13 @@ var exphbs  = require('express-handlebars');
 // Initialize Express
 var app = express();
 
+//Body Parser
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+
+app.use(bodyParser.json())
+
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
@@ -24,9 +32,16 @@ mongoose.connect("mongodb://localhost/fishDB");
 var db = mongoose.connection;
 
 // Require routes
-let router = require('./routes/htmlRoutes');
-app.use("/", router);
+let htmlRouter = require('./routes/htmlRoutes');
+let apiRouter = require('./routes/apiFishRoutes');
 
-app.listen(3300);
-console.log("App running on port 3300!");
+app.use("/", htmlRouter);
+app.use("/", apiRouter);
+
+
+app.listen(port, function(err) {
+  if (err) throw err;
+
+  console.log(`App running on ${port}`);
+});
 

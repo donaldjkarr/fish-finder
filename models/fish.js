@@ -23,7 +23,7 @@ var FishSchema = new Schema({
   },
 
   depth: {
-    type: Number,
+    type: String,
     trim: true
   },
 

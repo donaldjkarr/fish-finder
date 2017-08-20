@@ -5,8 +5,8 @@
                 <a class="navbar-brand" href="#">
                     <img class="img-responsive" alt="Brand" src="">
                 </a>
-                    <a href="index.html"><button class="btn btn-primary btn-lg">home</button></a>
-                    <a href="map.html"><button class="btn btn-success btn-lg">map</button></a>
+                    <a href="/"><button class="btn btn-primary btn-lg">home</button></a>
+                    <a href="/map"><button class="btn btn-success btn-lg">map</button></a>
                 </div>
             </div>
         </nav>
@@ -15,5 +15,15 @@
         <!--FISH WELL-->
 
         <div class="well">
-            WELL
+            {{#if fishArray}}
+                {{#each fishArray}}
+                    <h2>Type: {{this.type}}</h2>
+                    <h3>Lure: {{this.lure}}</h3>
+                    <h3>Depth: {{this.depth}}</h3>
+                    <h3>Comments: {{this.comments}}</h3>
+                    <h3>Date/Time: {{this.date}}</h3>
+                {{/each}}
+                {{else}}
+                <h1>None Yet</h1>
+            {{/if}}
         </div>
