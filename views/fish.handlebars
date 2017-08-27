@@ -17,11 +17,14 @@
         <div class="well">
             {{#if fishArray}}
                 {{#each fishArray}}
+                  <div class="jumbotron" id="fishJumbo">
                     <h2>Type: {{this.type}}</h2>
                     <h3>Lure: {{this.lure}}</h3>
                     <h3>Depth: {{this.depth}}</h3>
                     <h3>Comments: {{this.comments}}</h3>
-                    <h3>Date/Time: {{this.date}}</h3>
+                    <p>Date/Time: {{this.date}}</p>
+                    <button class="btn btn-large btn-danger">Delete Fish</button>
+                  </div>
                 {{/each}}
                 {{else}}
                 <h1>None Yet</h1>

@@ -3,14 +3,14 @@ var router = express.Router();
 
 var Fish = require("../models/fish.js");
 
-// Route to see notes we have added
+// Route to see fish we have added
 router.get("/", function(req, res) {
   // Find all notes in the note collection with our Note model
     res.render("index");
 });
 
 router.get("/fish", function(req, res) {
-  // Find all notes in the note collection with our Note model
+  // Find all fish in the fish collection with our Fish model
   Fish.find({}, function(error, fish) {
     // Send any errors to the browser
     if (error) {
