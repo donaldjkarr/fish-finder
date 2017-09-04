@@ -27,13 +27,22 @@ router.post("/fish", function(req, res) {
 
 //delete route
 router.delete("/fish", function(req, res) {
+  console.log('This got hit bitch');
   Fish.findByIdAndRemove({ _id: req.body.id }, function(error, fish) {
     if (error) {
     res.send(error);
     }
-    else {
-      res.render("/fish");
-    }
+    Fish.find({}, function(error, fish) {
+      // Send any errors to the browser
+      if (error) {
+        res.send(error);
+      }
+      // No else statement because res.send will terminate process above if there's an error
+      // Or send the doc to the browser
+      res.render("fish", {
+        fishArray: fish
+      });
+    });
   });
 });
 

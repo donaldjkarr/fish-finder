@@ -7,6 +7,7 @@
                 </a>
                     <a href="/"><button class="btn btn-primary btn-lg">home</button></a>
                     <a href="/map"><button class="btn btn-success btn-lg">map</button></a>
+                    <a href="#"><button class="btn btn-large btn-primary">Logout</button></a>
                 </div>
             </div>
         </nav>
@@ -23,7 +24,10 @@
                     <h3>Depth: {{this.depth}}</h3>
                     <h3>Comments: {{this.comments}}</h3>
                     <p>Date/Time: {{this.date}}</p>
-                    <button class="btn btn-large btn-danger">Delete Fish</button>
+                    <form method="POST" action="/fish?_method=DELETE">
+                        <input value="{{this._id}}" name="id" hidden/>
+                            <button type="submit" class="btn btn-large btn-danger">Delete Fish</button>
+                    </form>
                   </div>
                 {{/each}}
                 {{else}}
