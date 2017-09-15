@@ -27,7 +27,7 @@ router.post("/fish", function(req, res) {
 
 //delete route
 router.delete("/fish", function(req, res) {
-  console.log('This got hit bitch');
+  console.log('This Got Hit');
   Fish.findByIdAndRemove({ _id: req.body.id }, function(error, fish) {
     if (error) {
     res.send(error);
